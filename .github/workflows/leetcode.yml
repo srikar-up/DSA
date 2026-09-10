@@ -1,18 +1,19 @@
 name: Sync LeetCode
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch: # Manual sync trigger capability
   schedule:
-    - cron: '0 0 * * *' 
+    - cron: '0 0 * * *' # Automated engine executing nightly
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Sync
+      - name: Run Sync Pipeline
         uses: joshcai/leetcode-sync@v1.7
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          update-readme: true # 👈 This tells the script to build and update the stats automatically!
+          verbose: true
+          update-readme: true
