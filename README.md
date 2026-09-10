@@ -1,7 +1,9 @@
 # My DSA Journey 🚀
 
-This repository automatically syncs my accepted LeetCode submissions. 
+This repository automatically syncs my accepted LeetCode submissions.
 
-### My LeetCode Stats 📊
+### My LeetCode Profile Dashboard 📊
 
-![LeetCode Stats](https://jacoblin.cool)
+<p align="left">
+  <img src="https://vercel.app" alt="LeetCode Stats Dashboard" />
+</p>
