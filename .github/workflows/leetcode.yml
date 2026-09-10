@@ -1,19 +1,43 @@
 name: Sync LeetCode
 
 on:
-  workflow_dispatch: # Manual sync trigger capability
+  workflow_dispatch: 
   schedule:
-    - cron: '0 0 * * *' # Automated engine executing nightly
+    - cron: '0 0 * * *' 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Sync Pipeline
+      # Pipeline 1: Syncs and isolates Easy problems
+      - name: Sync Easy Problems
         uses: joshcai/leetcode-sync@v1.7
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          destination-folder: '01_Easy'
           verbose: true
-          update-readme: true
+          commit-header: '[Easy Sync]'
+
+      # Pipeline 2: Syncs and isolates Medium problems
+      - name: Sync Medium Problems
+        uses: joshcai/leetcode-sync@v1.7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          destination-folder: '02_Medium'
+          verbose: true
+          commit-header: '[Medium Sync]'
+
+      # Pipeline 3: Syncs and isolates Hard problems
+      - name: Sync Hard Problems
+        uses: joshcai/leetcode-sync@v1.7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          destination-folder: '03_Hard'
+          verbose: true
+          commit-header: '[Hard Sync]'
