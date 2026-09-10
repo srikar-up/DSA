@@ -2,11 +2,17 @@
 
 This repository automatically syncs my accepted LeetCode submissions.
 
-### My LeetCode Profile Tracker 📊
+### My LeetCode Statistics 📊
 
-[![LeetCode Profile](https://shields.io)](https://leetcode.com)
+<!-- leetcode-sync-start -->
+
+| Category | Count |
+| :--- | :---: |
+| 🟢 Easy | 0 |
+| 🟡 Medium | 0 |
+| 🔴 Hard | 0 |
+<!-- leetcode-sync-end -->
 
 ---
-
-### Sync Statistics 🛠️
-* 🎯 Track automated updates directly in the [GitHub Actions Logs](../../actions).
+### Quick Links 🔗
+* 🎯 [My Official LeetCode Profile](https://leetcode.com)
