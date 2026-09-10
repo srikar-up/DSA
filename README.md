@@ -1,10 +1,12 @@
-
 # My DSA Journey 🚀
 
 This repository automatically syncs my accepted LeetCode submissions.
 
-### My LeetCode Profile Dashboard 📊
+### My LeetCode Profile Tracker 📊
 
-<p align="left">
-  <img src="https://vercel.app" alt="LeetCode Stats Dashboard" />
-</p>
+[![LeetCode Profile](https://shields.io)](https://leetcode.com)
+
+---
+
+### Sync Statistics 🛠️
+* 🎯 Track automated updates directly in the [GitHub Actions Logs](../../actions).
