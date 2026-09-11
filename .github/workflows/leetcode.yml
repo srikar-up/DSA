@@ -1,19 +1,17 @@
 name: Sync LeetCode
 
 on:
-  workflow_dispatch: # Manual sync trigger capability
+  workflow_dispatch: # Allows manual trigger
   schedule:
-    - cron: '0 0 * * *' # Automated engine executing nightly
+    - cron: '0 0 * * *' # Runs automatically every day at midnight
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Sync Pipeline
-        uses: joshcai/leetcode-sync@v1.7
+      - name: Cook Solutions
+        uses: jasonalvarez/leetcode-sync@v2
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          verbose: true
-          update-readme: true
