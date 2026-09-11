@@ -1,0 +1,26 @@
+class NumArray {
+    int sum = 0;
+    public NumArray(int[] nums) {
+        Scanner sc = new scanner(System.in);
+        for(int i = 0;i=n;i++){
+            nums[i] = sc.nextint();
+        }
+
+    }
+    
+    public int sumRange(int left, int right) {
+        for(int i = left-1;i= right-1;i++){
+            sum += nums[i];
+        }
+    }
+    public staic void main(String atgs[]){
+       NumArray obj = new NumArray(nums);
+       int n =
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(left,right);
+ */
